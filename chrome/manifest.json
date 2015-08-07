@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "通知中心",
+  "version": "1.0",
+  "description": "接收服务器通知",
+  "icons": {
+    "16": "images/1.png",
+    "48": "images/1.png",
+    "128": "images/1.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/1.png",
+      "38": "images/1.png"
+    },
+    "default_title": "通知",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "background",
+    "notifications",
+    "*://*.gorouter.info/*"
+  ],
+  "web_accessible_resources": [
+    "images/*.png",
+    "style/double-rainbow.css",
+    "script/double-rainbow.js",
+    "script/main.js",
+    "templates/*"
+  ],
+  "background": {
+    // Recommended
+    "page": "popup.html"
+  },
+
+  "content_security_policy": "script-src 'self' http://socket.youqingkui.me/socket.io/socket.io.js; object-src 'self';"
+}
