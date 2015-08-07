@@ -19,7 +19,8 @@
   "permissions": [
     "background",
     "notifications",
-    "*://*.gorouter.info/*"
+    "*://*.gorouter.info/*",
+    "*://*.youqingkui.me/*"
   ],
   "web_accessible_resources": [
     "images/*.png",
@@ -31,7 +32,7 @@
   "background": {
     // Recommended
     "page": "popup.html"
-  },
+  }
 
-  "content_security_policy": "script-src 'self' http://socket.youqingkui.me/socket.io/socket.io.js; object-src 'self';"
+//  "content_security_policy": "script-src 'self' http://socket.youqingkui.me/socket.io/socket.io.js; object-src 'self';"
 }

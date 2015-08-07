@@ -2,7 +2,7 @@
 (function() {
   var socket;
 
-  socket = io('http://localhost:3002');
+  socket = io('http://socket.youqingkui.me');
 
   socket.on('chat message', function(msg) {
     return console.log(msg);

@@ -1,4 +1,4 @@
-socket = io('http://localhost:3002')
+socket = io('http://socket.youqingkui.me')
 
 
 socket.on 'chat message', (msg) ->
