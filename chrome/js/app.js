@@ -2,7 +2,7 @@
 (function() {
   var socket;
 
-  socket = io('http://socket.youqingkui.me');
+  socket = io('http://localhost:3002/chat');
 
   socket.on('chat message', function(msg) {
     return console.log(msg);
@@ -14,12 +14,36 @@
       type: "basic",
       title: "链接通知",
       message: "已链接到socket：" + msg,
-      iconUrl: 'images/1.png'
+      iconUrl: 'images/1.png',
+      buttons: [
+        {
+          'title': 'OK'
+        }, {
+          'title': 'NO'
+        }
+      ]
     };
     chrome.notifications.create("123", options, function(test) {
       return console.log("test", test);
     });
     return console.log(msg, t);
+  });
+
+  socket.on('a message', function(msg) {
+    return console.log("a message", msg);
+  });
+
+  chrome.notifications.onClosed.addListener(function(test) {
+    console.log("test ===>", test);
+    return console.log("close ok");
+  });
+
+  chrome.notifications.onClicked.addListener(function(id) {
+    return console.log("id click", id);
+  });
+
+  chrome.notifications.onButtonClicked.addListener(function(id, bt) {
+    return console.log("id onButtonClicked", id, bt);
   });
 
 }).call(this);
